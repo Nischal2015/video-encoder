@@ -1,0 +1,38 @@
+{
+  "Records": [
+    {
+      "eventVersion": "2.1",
+      "eventSource": "aws:s3",
+      "awsRegion": "us-east-1",
+      "eventTime": "2023-11-06T11:57:25.759Z",
+      "eventName": "ObjectCreated:Put",
+      "userIdentity": {
+        "principalId": "AWS:AIDAQOTBHTVE7AS4AXHY3"
+      },
+      "requestParameters": {
+        "sourceIPAddress": "202.166.207.89"
+      },
+      "responseElements": {
+        "x-amz-request-id": "WDR0Y22ZENAZQ07X",
+        "x-amz-id-2": "NwWWrE/eK0V5O8AUzn01aJHrs2F5DKDfFZxkWvFEFG73l4YVhoIkp7fKabdhWyworIvZTq3OKMNJY3c3kQ7280RSWBgIdpmiokTmWABM5Ko="
+      },
+      "s3": {
+        "s3SchemaVersion": "1.0",
+        "configurationId": "f1658e57-2e70-4bda-bb81-62e83eb4ed02",
+        "bucket": {
+          "name": "nischal-v1-serverless-video-upload",
+          "ownerIdentity": {
+            "principalId": "A11J6G97RFZXKP"
+          },
+          "arn": "arn:aws:s3:::nischal-v1-serverless-video-upload"
+        },
+        "object": {
+          "key": "TGG.pdf",
+          "size": 447633,
+          "eTag": "0f2a89eaffc7578eaa5f7b87693caef3",
+          "sequencer": "006548D4A2C97D42EE"
+        }
+      }
+    }
+  ]
+}
