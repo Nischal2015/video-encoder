@@ -1,0 +1,29 @@
+service: video-transcoder
+frameworkVersion: '3'
+useDotenv: true
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  memorySize: 256
+
+package:
+  patterns:
+    - '!node_modules/**'
+    - 'transcode-video/**'
+    - '!mock-s3-data.json'
+  individually: true
+
+functions:
+  transcode-video:
+    handler: index.videoTranscoder
+    role: ${env:TRANSCODE_VIDEO_ROLE}
+    environment:
+      MEDIA_ENDPOINT: ${env:MEDIA_ENDPOINT}
+      MEDIA_ROLE: ${env:MEDIA_ROLE}
+      TRANSCODE_VIDEO_BUCKET: ${env:TRANSCODE_VIDEO_BUCKET}
+    events:
+      - s3:
+          bucket: ${env:UPLOAD_BUCKET}
+          event: s3:ObjectCreated:*
