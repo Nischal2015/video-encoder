@@ -18,6 +18,8 @@ package:
 functions:
   transcode-video:
     handler: index.videoTranscoder
+    tags:
+      Owner: nischal.shakya
     role: ${env:TRANSCODE_VIDEO_ROLE}
     environment:
       MEDIA_ENDPOINT: ${env:MEDIA_ENDPOINT}
